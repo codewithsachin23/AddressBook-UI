@@ -21,5 +21,11 @@ export const routes: Routes = [
         component:AddressListComponent,
         pathMatch:"full"
 
+    },
+    {
+        path:'edit/:id',
+        component:AddressFormComponent,
+        pathMatch:"full"
+
     }
 ];

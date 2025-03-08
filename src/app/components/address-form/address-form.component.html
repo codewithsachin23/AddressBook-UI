@@ -1,0 +1,89 @@
+<nav>
+   <h1 class="header">Address Book</h1>
+</nav>
+<div class="form-container">
+  <div class="form-header">
+    PERSON ADDRESS FORM
+    <span class="close-btn" routerLink="">&times;</span>
+  </div>
+  
+  <div *ngIf="successMessage" class="success-message">
+    {{ successMessage }}
+  </div>
+  <div *ngIf="successMessage" class="success-message">
+    {{ successMessageforUpdate }}
+  </div>
+
+  <form (ngSubmit)="doSubmit()">
+      <div class="form-body">
+          <div class="form-group">
+              <label for="fullName">Full Name</label>
+              <input type="text" id="fullName" name="name"[(ngModel)]="contactData.name"  placeholder="Enter your full name">
+          </div>
+          <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input type="text" id="phone" name="phoneNumber"[(ngModel)]="contactData.phoneNumber" placeholder="Enter your phone number">
+          </div>
+
+          <div class="form-group">
+            <label for="address">Address:</label>
+            <textarea id="address" name="address"[(ngModel)]="contactData.address" placeholder="Enter address"></textarea>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="city">City:</label>
+              <input type="text" id="city" name="city"  name="city"[(ngModel)]="contactData.city" placeholder="Enter your city" class="form-control">
+            </div>
+            
+      
+            <div class="form-group">
+              <label for="state">State:</label>
+              <select id="state" name="state"[(ngModel)]="contactData.state">
+                <option value="">Select State</option>
+                <option value="andhra_pradesh">Andhra Pradesh</option>
+                <option value="arunachal_pradesh">Arunachal Pradesh</option>
+                <option value="assam">Assam</option>
+                <option value="bihar">Bihar</option>
+                <option value="chhattisgarh">Chhattisgarh</option>
+                <option value="goa">Goa</option>
+                <option value="gujarat">Gujarat</option>
+                <option value="haryana">Haryana</option>
+                <option value="himachal_pradesh">Himachal Pradesh</option>
+                <option value="jharkhand">Jharkhand</option>
+                <option value="karnataka">Karnataka</option>
+                <option value="kerala">Kerala</option>
+                <option value="madhya_pradesh">Madhya Pradesh</option>
+                <option value="maharashtra">Maharashtra</option>
+                <option value="manipur">Manipur</option>
+                <option value="meghalaya">Meghalaya</option>
+                <option value="mizoram">Mizoram</option>
+                <option value="nagaland">Nagaland</option>
+                <option value="odisha">Odisha</option>
+                <option value="punjab">Punjab</option>
+                <option value="rajasthan">Rajasthan</option>
+                <option value="sikkim">Sikkim</option>
+                <option value="tamil_nadu">Tamil Nadu</option>
+                <option value="telangana">Telangana</option>
+                <option value="tripura">Tripura</option>
+                <option value="uttar_pradesh">Uttar Pradesh</option>
+                <option value="uttarakhand">Uttarakhand</option>
+                <option value="west_bengal">West Bengal</option>            
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="zip">Zip Code:</label>
+              <input type="text" id="zip"  name="zipCode"[(ngModel)]="contactData.zipCode" placeholder="Enter zip code">
+            </div>
+          </div>
+      
+         
+      
+          <div class="button-group">
+            <button type="submit">Add</button>
+            <button type="reset">Reset</button>
+          </div>
+      </div>
+    </form>
+ 
+  </div>
